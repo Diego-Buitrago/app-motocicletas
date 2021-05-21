@@ -44,40 +44,45 @@ const Inicio = () => {
     return (
         <>
             <Menu/>
-            
             <div class="col-12 col-lg-12">
                 <div class="row contenedor">
                     <button onClick={() => {Info('Mantenimiento Preventivo')}} class="col-12 col-lg-3 bg-info">
+                        <div className="div-img_1">©</div>
                         <h1 className="h1-inicio">{man_preventivo}</h1>
                         <h5>Mantenimiento Preventivo</h5>
                         <p>Pulsa para mas informacion</p>
                     </button>
                     
                     <button onClick={() => {Info('Mantenimiento General')}} class="col-12 col-lg-3 bg-secondary">
+                        <div className="div-img_2">©</div>
                         <h1 className="h1-inicio">{man_general}</h1>
                         <h5>Mantenimiento General</h5>
                         <p>Pulsa para mas informacion</p>
                     </button>
 
                     <button onClick={() => {Info('Reparada General')}} class="col-12 col-lg-3 bg-success">
+                        <div className="div-img_3">©</div>
                         <h1 className="h1-inicio">{rep_general}</h1>
                         <h5>Reparada General</h5>
                         <p>Pulsa para mas informacion</p>
                     </button>
                     
                     <button onClick={() => {Info('Reparada Parcial')}} class="col-12 col-lg-3 bg-secondary">
+                        <div className="div-img_4">©</div>
                         <h1 className="h1-inicio">{rep_parcial}</h1>
                         <h5>Reparada Parcial</h5>
                         <p>Pulsa para mas informacion</p>
                     </button>
 
                     <button onClick={() => {Info('Mantenimiento Preventivo 2 Tiempos')}} class="col-12 col-lg-3 bg-success">
+                        <div className="div-img_5">©</div>
                         <h1 className="h1-inicio">{man_preventivo_2}</h1>
                         <h5>Mantenimiento Preventivo 2 Tiempos</h5>
                         <p>Pulsa para mas informacion</p>
                     </button>
                     
                     <button onClick={() => {Info('Mantenimiento General 2 Tiempos')}} class="col-12 col-lg-3 bg-info">
+                        <div className="div-img_6">©</div>
                         <h1 className="h1-inicio">{man_generl_2}</h1>
                         <h5>Mantenimiento General 2 Tiempos</h5>
                         <p>Pulsa para mas informacion</p>

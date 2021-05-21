@@ -2,6 +2,60 @@
     margin-left: 55%;
 }
 
+.div-img_1{
+    position: absolute;
+    width: 35%;
+    min-height: 70%;
+    background-image: url('../image/composicion-motocicleta.jpg');
+    background-size: 160px, 150px;
+    margin-left: 60%;
+}
+
+.div-img_2{
+    position: absolute;
+    width: 35%;
+    min-height: 70%;
+    background-image: url('../image/personaje-mecanico-dibujos-animados_119589-84.jpg');
+    background-size: 156px, 150px;
+    margin-left: 60%;
+}
+
+.div-img_3{
+    position: absolute;
+    width: 35%;
+    min-height: 70%;
+    background-image: url('../image/herramientas_24908-54114.jpg');
+    background-size: 130px, 150px;
+    margin-left: 60%;
+}
+
+.div-img_4{
+    position: absolute;
+    width: 35%;
+    min-height: 70%;
+    background-image: url('../image/plantilla-motor-motocicleta-vintage_225004-1240.jpg');
+    background-size: 140px, 150px;
+    margin-left: 60%;
+}
+
+.div-img_5{
+    position: absolute;
+    width: 40%;
+    min-height: 43%;
+    background-image: url('../image/servicio-reparacion-mantenimiento-motocicletas_1150-43150.jpg');
+    background-size: 180px, 150px;
+    margin-left: 55%;
+}
+
+.div-img_6{
+    position: absolute;
+    width: 40%;
+    min-height: 43%;
+    background-image: url('../image/folleto-informativo-uso-herramientas-manuales-dibujos-animados-flat-baner_81522-4023.jpg');
+    background-size: 150px, 150px;
+    margin-left: 55%;
+}
+
 .a-login{
     margin-left: 40%;
 }

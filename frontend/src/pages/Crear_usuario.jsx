@@ -22,6 +22,7 @@ const Crear = () => {
         } else if (tipo === '') {
             setError('Selecciona el tipo de usuario')
         } else {
+
             fetch("/registrar_usuario", {
                 method: "POST",
                 headers: {
