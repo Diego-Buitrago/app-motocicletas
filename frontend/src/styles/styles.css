@@ -1,0 +1,86 @@
+.a-recuperar{
+    margin-left: 55%;
+}
+
+.a-login{
+    margin-left: 40%;
+}
+
+.form-group{
+    width: 500px;
+    margin-left: 15%;
+}
+
+.h1-usuarios{
+    margin-top: 2%;
+    margin-left: 38%;
+}
+
+.div-crear{
+    margin-left: 22%;
+}
+
+.h1-crear-usuario{
+    margin-left: 25%;
+    margin-top: 2%;
+}
+
+.h1-gestionar{
+    margin-left: 30%;
+}
+
+.h1-reparacion{
+    margin-left: 5%;
+}
+
+.h1-seguimiento{
+    margin-left: 40%;
+    margin-top: 2%;
+}
+
+.contenedor > button{
+    margin-left: 6%;
+    margin-top: 6%;
+    min-height: 170px;
+    color: white;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.h1-inicio{
+    font-size: 320%;
+}
+
+input{
+    border-radius: 5px;
+}
+
+select{
+    border-radius: 5px;
+    width: 95%;
+}
+
+textarea{
+    border-radius: 10px;
+    width: 75%;
+}
+
+#finalizar{
+    margin-left: 15%;
+    width: 71%;
+}
+
+#boton-borrar{
+    margin-right: 60%;
+}
+
+#error{
+    text-align: center;
+    margin-left: 15%;
+    width: 71%;
+}
+
+#table-usuarios{
+    margin-left: 15%;
+    width: 70%;
+}
