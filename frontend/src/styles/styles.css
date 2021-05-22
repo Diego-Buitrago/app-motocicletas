@@ -33,8 +33,8 @@
     position: absolute;
     width: 35%;
     min-height: 70%;
-    background-image: url('../image/plantilla-motor-motocicleta-vintage_225004-1240.jpg');
-    background-size: 140px, 150px;
+    background-image: url('../image/500_F_278445406_cktu3VWEmikDKQd2gkbv4sIQms6mX0mz.jpg');
+    background-size: 155px, 150px;
     margin-left: 60%;
 }
 
@@ -54,6 +54,37 @@
     background-image: url('../image/folleto-informativo-uso-herramientas-manuales-dibujos-animados-flat-baner_81522-4023.jpg');
     background-size: 150px, 150px;
     margin-left: 55%;
+}
+
+.div-img_7{
+    position: absolute;
+    width: 35%;
+    min-height: 70%;
+    background-image: url('../image/gran-conjunto-imagenes-predisenadas-motocicleta-aislada-ilustraciones-planas-varios-tipos-motocicletas_1150-37322.jpg');
+    background-size: 140px, 150px;
+    margin-left: 60%;
+}
+
+.div-img_8{
+    position: absolute;
+    width: 29%;
+    min-height: 70%;
+    background-image: url('../image/ilustracion-personajes-arreglando-rueda-dentada_53876-40796.jpg');
+    background-size: 120px, 150px;
+    margin-left: 67%;
+}
+
+.div-img_9{
+    position: absolute;
+    width: 35%;
+    min-height: 70%;
+    background-image: url('../image/eliminados.jpg');
+    background-size: 120px, 150px;
+    margin-left: 60%;
+}
+
+.bg-button{
+    background-color: #9c27b0;
 }
 
 .a-login{
@@ -92,9 +123,24 @@
     margin-top: 2%;
 }
 
+.h1-vehiculos{
+    margin-left: 42%;
+    margin-top: 2%;
+}
+
+.h1-vehiculos_man{
+    margin-left: 33%;
+    margin-top: 2%;
+}
+
+.h1-eliminados{
+    margin-left: 38%;
+    margin-top: 2%;
+}
+
 .contenedor > button{
     margin-left: 6%;
-    margin-top: 6%;
+    margin-top: 3%;
     min-height: 170px;
     color: white;
     border-radius: 5px;

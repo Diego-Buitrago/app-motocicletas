@@ -31,6 +31,8 @@ const Reparacion = () => {
                     <tbody>
                         <tr>
                             <th>Numero de placa</th>
+                            <th>Marca</th>
+                            <th>Linea</th>
                             <th>Fecha de reparacion</th>
                             <th>Tipo de seguimiento</th>
                             <th>Observaciones</th>
@@ -39,7 +41,9 @@ const Reparacion = () => {
                             datos.map((item, index) => 
                                 <tr key={index}>
                                     <td>{item.placa_moto}</td>
-                                    <td>{item.fecha_reparacion}</td>
+                                    <td>{item.marca}</td>
+                                    <td>{item.linea}</td>
+                                    <td>{item.fecha_reparacion ? item.fecha_reparacion.slice(0, -14) : ''}</td>
                                     <td>{item.tipo_seguimiento}</td>
                                     <td>{item.observaciones}</td>
                                 </tr>

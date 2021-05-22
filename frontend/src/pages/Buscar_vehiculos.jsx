@@ -229,8 +229,8 @@ const Buscar_vehi = () => {
                                         <td>{item.marca}</td>
                                         <td>{item.linea}</td>
                                         <td>{item.modelo}</td>
-                                        <td>{item.fecha_ven_seguro}</td>
-                                        <td>{item.fecha_ven_tecnomecanica}</td>
+                                        <td>{item.fecha_ven_seguro ? item.fecha_ven_seguro.slice(0, -14) : ''}</td>
+                                        <td>{item.fecha_ven_tecnomecanica ? item.fecha_ven_tecnomecanica.slice(0, -14) : ''}</td>
                                         <td><button
                                                 className="btn btn-info"
                                                 onClick={() => {editar(item.nro_placa)}}

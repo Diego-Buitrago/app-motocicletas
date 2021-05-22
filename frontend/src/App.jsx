@@ -18,6 +18,9 @@ import Seguimiento from './pages/Seguimiento'
 import Buscar_vehiculos from './pages/Buscar_vehiculos'
 import Buscar_vehiculos_r from './pages/Buscar_vehiculos_r'
 import Informacion from './pages/Informacion'
+import Ver_vehiculos from './pages/Ver_vehiculos'
+import Ver_vehiculos_man from './pages/Ver_vehiculos_man'
+import Eliminados from './pages/Eliminados'
 
 function App() {
   return (
@@ -39,6 +42,9 @@ function App() {
         <Route path="/buscar_vehiculos" component={Buscar_vehiculos}/>
         <Route path="/buscar_vehiculos_r" component={Buscar_vehiculos_r}/>
         <Route path="/informacion" component={Informacion}/>
+        <Route path="/ver_vehiculos" component={Ver_vehiculos}/>
+        <Route path="/ver_vehiculos_man" component={Ver_vehiculos_man}/>
+        <Route path="/eliminados" component={Eliminados}/>
       </Switch>
     </Router>
   );

@@ -1,44 +1,24 @@
 import React, {useState, useEffect} from 'react'
 import Menu from '../components/Menu'
 
-const Vehiculos = () => {
+const Ver_vehiculos_man = () => {
 
     const [datos, setDatos] = useState([{}])
 
     useEffect(() => {
         const peticion = async() => {
-            const res = await fetch('/vehiculos')
+            const res = await fetch('/vehiculos_man')
             const data = await res.json()
             setDatos(data)
         }
         peticion()   
     }, []);
 
-    const editar = (placa) => {
-        window.localStorage.setItem('editar_vehiculo', (placa))
-        window.location.href = '/editar_vehiculo'
-    }
-
-    const eliminar = (placa) => {
-        const nuevoArray = datos.filter(item => item.nro_placa !== placa)
-        setDatos(nuevoArray)
-
-        fetch('/eliminar_vehiculo' , {
-            method: 'DELETE',
-            headers: {
-               'Content-Type': 'application/json',
-       },
-       body: JSON.stringify({
-           placa: placa
-           })
-       })
-    }
-
     return (
         <>
             <Menu/>
             <div className="col" >
-                <h1 className="h1-usuarios">Gestionar Vehiculos</h1>
+                <h1 className="h1-vehiculos_man">Vehiculos con mantenimiento</h1>
                 <table className="table table-info mt-5" id="table-usuarios">
                 <tbody>
                     <tr>
@@ -58,18 +38,6 @@ const Vehiculos = () => {
                                 <td>{item.modelo}</td>
                                 <td>{item.fecha_ven_seguro ? item.fecha_ven_seguro.slice(0, -14) : ''}</td>
                                 <td>{item.fecha_ven_tecnomecanica ? item.fecha_ven_tecnomecanica.slice(0, -14) : ''}</td>
-                                <td><button
-                                        className="btn btn-info"
-                                        onClick={() => {editar(item.nro_placa)}}
-                                    >
-                                        Editar
-                                    </button></td>
-                                <td><button
-                                        className="btn btn-danger"
-                                        onClick={() => {eliminar(item.nro_placa)}}
-                                    >
-                                        Borrar
-                                    </button></td>
                             </tr>
                         )
                     }
@@ -80,4 +48,4 @@ const Vehiculos = () => {
     )
 };
 
-export default Vehiculos; 
+export default Ver_vehiculos_man; 

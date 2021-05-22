@@ -197,7 +197,7 @@ router.post('/registrar_vehiculo', async(req, res) => {
           res.json({});
       }
   } catch (e) {
-      console.log(e.error)
+      console.log(e)
       res.status(500).json({errorCode : e.errno, message : "Error en el servidor"});
   } finally {
       client.release(true);
@@ -304,14 +304,16 @@ router.post('/registrar_seguimiento', async(req, res) => {
   try {
       const {
         placa_moto,
+        marca: marca,
+        linea: linea,
         fecha_reparacion,
         tipo_seguimiento,
         observaciones
       } = req.body
       const client = await pool.connect()
       const response = await client.query(
-          'INSERT INTO seguimiento(placa_moto, fecha_reparacion, tipo_seguimiento, observaciones) VALUES($1, $2, $3, $4)',
-          [placa_moto, fecha_reparacion, tipo_seguimiento, observaciones])
+          'INSERT INTO seguimiento(placa_moto, marca, linea, fecha_reparacion, tipo_seguimiento, observaciones) VALUES($1, $2, $3, $4, $5, $6)',
+          [placa_moto, marca, linea, fecha_reparacion, tipo_seguimiento, observaciones])
 
       if (response.rowsCount > 0) {
           res.json({
@@ -397,6 +399,120 @@ router.post('/buscar', async(req, res) => {
       
       if (result.rowCount == 0) {
         return res.json('');
+      } else {
+          return res.json(result.rows);
+      }
+  } catch (error) {
+    console.log(error);
+  } finally {
+    client.release(true);
+  }
+});
+
+router.get('/total_vehiculos', async (req, res) => {
+  let client = await pool.connect();
+  
+  try {
+      let result = await client.query(
+        `SELECT COUNT(*) FROM motocicletas`
+      );
+      if (result.rowCount == 0) {
+        return res.json('veiculos no encontrados');
+      } else {
+          return res.json(result.rows);
+      }
+  } catch (error) {
+    console.log(error);
+  } finally {
+    client.release(true);
+  }
+});
+
+router.get('/total_vehiculos_mantenimiento', async (req, res) => {
+  let client = await pool.connect();
+  
+  try {
+      let result = await client.query(
+        `SELECT COUNT(*) FROM motocicletas WHERE seguimiento = true`
+      );
+      if (result.rowCount == 0) {
+        return res.json('veiculos no encontrados');
+      } else {
+          return res.json(result.rows);
+      }
+  } catch (error) {
+    console.log(error);
+  } finally {
+    client.release(true);
+  }
+});
+
+router.get('/vehiculos_man', async (req, res) => {
+  let client = await pool.connect();
+  
+  try {
+      let result = await client.query(
+        `SELECT * FROM motocicletas WHERE seguimiento = true`
+      );
+      if (result.rowCount == 0) {
+        return res.json('veiculos no encontrados');
+      } else {
+          return res.json(result.rows);
+      }
+  } catch (error) {
+    console.log(error);
+  } finally {
+    client.release(true);
+  }
+});
+
+router.get('/total_eliminados', async (req, res) => {
+  let client = await pool.connect();
+  
+  try {
+      let result = await client.query(
+        `SELECT COUNT(*) FROM veihiculos_eliminados`
+      );
+      if (result.rowCount == 0) {
+        return res.json('veiculos no encontrados');
+      } else {
+          return res.json(result.rows);
+      }
+  } catch (error) {
+    console.log(error);
+  } finally {
+    client.release(true);
+  }
+});
+
+router.get('/total_eliminados', async (req, res) => {
+  let client = await pool.connect();
+  
+  try {
+      let result = await client.query(
+        `SELECT COUNT(*) FROM veihiculos_eliminados`
+      );
+      if (result.rowCount == 0) {
+        return res.json('veiculos no encontrados');
+      } else {
+          return res.json(result.rows);
+      }
+  } catch (error) {
+    console.log(error);
+  } finally {
+    client.release(true);
+  }
+});
+
+router.get('/eliminados', async (req, res) => {
+  let client = await pool.connect();
+  
+  try {
+      let result = await client.query(
+        `SELECT * FROM veihiculos_eliminados`
+      );
+      if (result.rowCount == 0) {
+        return res.json('veiculos no encontrados');
       } else {
           return res.json(result.rows);
       }

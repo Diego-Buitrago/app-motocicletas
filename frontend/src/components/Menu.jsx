@@ -3,6 +3,14 @@ import {Link} from 'react-router-dom'
 
 const Menu = () => {
 
+    const Serrar_sesion = () => {
+        window.localStorage.removeItem("editar_vehiculo", true);
+        window.localStorage.removeItem("seguimiento", true);
+        window.localStorage.removeItem("tipo_seguimiento", true);
+        window.localStorage.removeItem("tipo", true);
+        window.location.href = '/'
+    }
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -39,6 +47,9 @@ const Menu = () => {
                         >{
                             localStorage.getItem("tipo") === '1' ? '' : localStorage.getItem("tipo") === '2' ? 'Buscar_Vehiculos' : ''
                         }</Link>
+                    </li>
+                    <li className="nav-item col-sm-5">
+                        <button onClick={Serrar_sesion} className="btn btn-dark mt-2 flexbox">Cerrar sesion</button>
                     </li>
                 </ul>
             </nav>

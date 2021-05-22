@@ -45,7 +45,12 @@ const Registrar = () => {
                 if (res.status === 200) {
                 setError(null)
                 setExito('Registro exitoso')
-                window.location.href = '/registrar_vehiculo'
+                setPlaca('')
+                setMarca('')
+                setLinea('')
+                setModelo('')
+                setVenSeguro('')
+                setVenTecnomecanica('')
             } else {setError('Error en el servidor contacta al administrador')}
             });
         }
@@ -63,6 +68,7 @@ const Registrar = () => {
                         <td><label htmlFor="placa">Numero placa:</label></td>
                         <td><input
                             onChange={(e)=>{setPlaca(e.target.value)}}
+                            value={nro_placa}
                             type="text"
                             name="placa"
                         /></td>
@@ -70,7 +76,8 @@ const Registrar = () => {
                     <tr>
                         <td><label htmlFor="marca">Marca:</label></td>
                         <td>
-                            <select onChange={(e)=>setMarca(e.target.value)}>
+                            <select value={marca} onChange={(e)=>setMarca(e.target.value)}>
+                                <option value="">---------</option>
                                 <option value="AKT">AKT</option>
                                 <option value="Honda">Honda</option>
                                 <option value="Yamaha">Yamaha</option>
@@ -86,7 +93,8 @@ const Registrar = () => {
                         <td>
                             {
                                 marca === 'AKT' ? (
-                                    <select onChange={(e)=>setLinea(e.target.value)}>
+                                    <select value={linea} onChange={(e)=>setLinea(e.target.value)}>
+                                        <option value="">---------</option>
                                         <option value="NKD 125">NKD 125</option>
                                         <option value="SPECIAL 110 X">SPECIAL 110 X</option>
                                         <option value="FLEX 125">FLEX 125</option>
@@ -98,7 +106,8 @@ const Registrar = () => {
                                     </select>
                 
                                 ) : marca === 'Honda' ? (
-                                    <select onChange={(e)=>setLinea(e.target.value)}>
+                                    <select value={linea} onChange={(e)=>setLinea(e.target.value)}>
+                                        <option value="">---------</option>
                                         <option value="WAVE 110S">WAVE 110S</option>
                                         <option value="LH150">LH150</option>
                                         <option value="XR190L">XR190L</option>
@@ -109,7 +118,8 @@ const Registrar = () => {
                                         <option value="CB250 TWISTER">CB250 TWISTER</option>
                                     </select>
                                 ) : marca === 'Yamaha' ? (
-                                    <select onChange={(e)=>setLinea(e.target.value)}>
+                                    <select value={linea} onChange={(e)=>setLinea(e.target.value)}>
+                                        <option value="">---------</option>
                                         <option value="NUEVA NMAX">NUEVA NMAX</option>
                                         <option value="NMAX CONNECTED">NMAX CONNECTED</option>
                                         <option value="Xmax 300">Xmax 300</option>
@@ -118,7 +128,8 @@ const Registrar = () => {
                                         <option value="NMAX">NMAX</option>
                                     </select>
                                 ) : marca === 'Bajaj' ? (
-                                    <select onChange={(e)=>setLinea(e.target.value)}>
+                                    <select value={linea} onChange={(e)=>setLinea(e.target.value)}>
+                                        <option value="">---------</option>
                                         <option value="BOXER">BOXER</option>
                                         <option value="Discover">Discover</option>
                                         <option value="Pulsar">Pulsar</option>
@@ -126,7 +137,8 @@ const Registrar = () => {
                                         <option value="Torito">Torito</option>
                                     </select>
                                 ) : marca === 'Suzuki' ? (
-                                    <select onChange={(e)=>setLinea(e.target.value)}>
+                                    <select value={linea} onChange={(e)=>setLinea(e.target.value)}>
+                                        <option value="">---------</option>
                                         <option value="Address">Address</option>
                                         <option value="Burgman 125">Burgman 125</option>
                                         <option value="Burgman 200">Burgman 200</option>
@@ -134,7 +146,8 @@ const Registrar = () => {
                                         <option value="GSX-S750A">GSX-S750A</option>
                                     </select>
                                 ) : marca === 'Hero' ? (
-                                    <select onChange={(e)=>setLinea(e.target.value)}>
+                                    <select value={linea} onChange={(e)=>setLinea(e.target.value)}>
+                                        <option value="">---------</option>
                                         <option value="ECO 100">ECO 100</option>
                                         <option value="ECO DELUXE">ECO DELUXE</option>
                                         <option value="ECO DELUXE CLÁSICA">ECO DELUXE CLÁSICA</option>
@@ -146,7 +159,8 @@ const Registrar = () => {
                                         <option value="HUNK 160">HUNK 160</option>
                                     </select>
                                 ): marca === 'TVS' ? (
-                                    <select onChange={(e)=>setLinea(e.target.value)}>
+                                    <select value={linea} onChange={(e)=>setLinea(e.target.value)}>
+                                        <option value="">---------</option>
                                         <option value="Apache RR 310">Apache RR 310</option>
                                         <option value="Apache RTR 200 4V">Apache RTR 200 4V</option>
                                         <option value="Apache RTR 180">Apache RTR 180</option>
@@ -163,7 +177,8 @@ const Registrar = () => {
                     <tr>
                         <td><label htmlFor="modelo">Modelo:</label></td>
                         <td>
-                            <select onChange={(e)=>setModelo(e.target.value)}>
+                            <select value={modelo} onChange={(e)=>setModelo(e.target.value)}>
+                                <option value="">---------</option>
                                 <option value="2005">2005</option>
                                 <option value="2006">2006</option>
                                 <option value="2007">2007</option>
@@ -189,6 +204,7 @@ const Registrar = () => {
                         <td><label htmlFor="seguro">Fecha vencimiento seguro:</label></td>
                         <td><input
                             onChange={(e)=>{setVenSeguro(e.target.value)}}
+                            value={fecha_ven_seguro}
                             type="date"
                             name="seguro"
                         /></td>
@@ -197,6 +213,7 @@ const Registrar = () => {
                         <td><label htmlFor="tecnomecanica">Fecha vencimiento tecnomecanica:</label></td>
                         <td><input
                             onChange={(e)=>{setVenTecnomecanica(e.target.value)}}
+                            value={fecha_ven_tecnomecanica}
                             type="date"
                             name="tecnomecanica"
                         /></td>

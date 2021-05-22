@@ -5,6 +5,8 @@ const moment = require("moment");
 const Gestionar = () => {
 
     const [nro_placa, setPlaca] = useState('')
+    const [marca, setMarca] = useState('')
+    const [linea, setLinea] = useState('')
     const [fecha, setFecha] = useState('')
     const [tipo, setTipo] = useState('')
     const [observaciones, setObservaciones] = useState('')
@@ -17,6 +19,8 @@ const Gestionar = () => {
         const res = await fetch(`/get_editar_vehiculo?` + new URLSearchParams({ placa: localStorage.getItem('editar_vehiculo')}))
         const data = await res.json()
         setPlaca(data[0].nro_placa)
+        setMarca(data[0].marca)
+        setLinea(data[0].linea)
     }, [])
   
     const Registrar = (e) => {
@@ -32,6 +36,8 @@ const Gestionar = () => {
             },
             body: JSON.stringify({
                 placa_moto: nro_placa,
+                marca: marca,
+                linea: linea,
                 fecha_reparacion: fecha,
                 tipo_seguimiento: tipo,
                 observaciones: observaciones
@@ -63,6 +69,24 @@ const Gestionar = () => {
                         /></td>
                     </tr>
                     <tr>
+                        <td><label htmlFor="marca">Marca:</label></td>
+                        <td><input
+                            disabled
+                            value={marca}
+                            type="text"
+                            name="marca"
+                        /></td>
+                    </tr>
+                    <tr>
+                        <td><label htmlFor="linea">Linea:</label></td>
+                        <td><input
+                            disabled
+                            value={linea}
+                            type="text"
+                            name="linea"
+                        /></td>
+                    </tr>
+                    <tr>
                         <td><label htmlFor="fecha">Fecha de reparacion:</label></td>
                         <td><input
                             disabled
@@ -75,6 +99,7 @@ const Gestionar = () => {
                         <td><label htmlFor="tipo">Tipo de seguimiento:</label></td>
                         <td>
                             <select onChange={(e)=>{setTipo(e.target.value)}}>
+                                <option value="">----------------</option>
                                 <option value="Mantenimiento Preventivo">Mantenimiento Preventivo</option>
                                 <option value="Mantenimiento General">Mantenimiento General</option>
                                 <option value="Reparada General">Reparada General</option>
